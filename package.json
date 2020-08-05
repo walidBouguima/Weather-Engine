@@ -9,6 +9,7 @@
     "test": "ng test",
     "lint": "run-p lint:ts lint:tsc",
     "e2e": "ng e2e",
+    "build:prod": "ng build --prod",
     "style": "import-sort -l \"**/{src,tests,e2e}/**/*.ts\" && prettier --check \"**/{src,tests,e2e}/**/*.{*css,ts}\"",
     "style:fix": "import-sort --write \"**/{src,tests,e2e}/**/*.ts\" && prettier --write \"**/{src,tests,e2e}/**/*.{*css,ts}\" && js-beautify \"**/src/**/*.html\"",
     "lint:fix": "run-s lint:ts:fix lint:tsc",
