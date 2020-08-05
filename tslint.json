@@ -3,7 +3,9 @@
     "tslint:recommended",
     "tslint-etc",
     "tslint-config-prettier",
-    "tslint-plugin-prettier"
+    "tslint-plugin-prettier",
+    "tslint-etc"
+
   ],
   "rules": {
     "align": {
