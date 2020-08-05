@@ -23,15 +23,21 @@ interface ICurrentWeatherData {
   name: string
 }
 
+export interface IWeatherService {
+  getCurrentWeather(city: string, country: string): Observable<ICurrentWeather>
+}
+
 @Injectable({
   providedIn: 'root',
 })
-export class WeatherService {
+export class WeatherService implements IWeatherService {
   constructor(private httpClient: HttpClient) {}
+
   getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
     const uriParams = new HttpParams()
       .set('q', `${city},${country}`)
       .set('appid', environment.appId)
+
     return this.httpClient
       .get<ICurrentWeatherData>(
         `${environment.baseUrl}api.openweathermap.org/data/2.5/weather`,
@@ -39,6 +45,7 @@ export class WeatherService {
       )
       .pipe(map((data) => this.transformToICurrentWeather(data)))
   }
+
   private transformToICurrentWeather(data: ICurrentWeatherData): ICurrentWeather {
     return {
       city: data.name,
@@ -49,6 +56,7 @@ export class WeatherService {
       description: data.weather[0].description,
     }
   }
+
   private convertKelvinToFahrenheit(kelvin: number): number {
     return (kelvin * 9) / 5 - 459.67
   }
