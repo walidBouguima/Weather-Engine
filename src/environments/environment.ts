@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   appId: 'a19d7c33fd81c08f642dafca83ea8654',
-  baseUrl: 'http://',
+  baseUrl: 'https://cors-anywhere.herokuapp.com/http://',
 }
 
 /*
