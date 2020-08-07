@@ -5,9 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent } from './app.component'
-import { CurrentWeatherComponent } from './current-weather/current-weather.component'
-import { MaterialModule } from './material.module';
 import { CitySearchComponent } from './city-search/city-search.component'
+import { CurrentWeatherComponent } from './current-weather/current-weather.component'
+import { MaterialModule } from './material.module'
 
 @NgModule({
   declarations: [AppComponent, CurrentWeatherComponent, CitySearchComponent],
