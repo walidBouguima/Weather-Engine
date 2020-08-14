@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "prettier": "prettier --write **/*.{ts,js,css,html}",
     "start": "ng serve --port 5000",
     "build": "ng build",
     "build:prod": "ng build --prod",
