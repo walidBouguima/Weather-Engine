@@ -27,16 +27,17 @@ jobs:
 
       - run: npm run build:prod
       - run: npm run e2e
+
       - run:
-        name: Move compiled app to workspace
-        command: |
-          set -exu
-          mkdir -p /tmp/workspace/dist
-          mv dist/local-weatherapp /tmp/workspace/dist/
+          name: Move compiled app to workspace
+          command: |
+            set -exu
+            mkdir -p /tmp/workspace/dist
+            mv dist/local-weatherapp /tmp/workspace/dist/
       - persist_to_workspace:
-        root: /tmp/workspace
-        paths:
-          - dist/local-weatherapp
+          root: /tmp/workspace
+          paths:
+            - dist/local-weatherapp
   deploy:
     docker:
       - image: circleci/node:lts
@@ -48,9 +49,13 @@ jobs:
 
 workflows:
   version: 2
-  build-and-test:
+  build-test-and-approval-deploy:
     jobs:
       - build
-      - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
