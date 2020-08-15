@@ -105,11 +105,5 @@
       "style": "module",
       "options": {}
     }
-  },
-  "config": {
-    "imageRepo": "[walidmoney]/[1million_walid]",
-    "imageName": "localcast-weather",
-    "imagePort": "3000",
-    "internalContainerPort": "3000"
   }
 }
