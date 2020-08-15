@@ -1,7 +1,13 @@
 {
-  "name": "local-weather-app",
+  "name": "local-weatherapp",
   "version": "0.0.0",
   "license": "MIT",
+  "config": {
+    "imageRepo": "walidbouguima/angularweather",
+    "imageName": "angularweather",
+    "imagePort": "3000",
+    "internalContainerPort": "3000"
+  },
   "scripts": {
     "ng": "ng",
     "prettier": "prettier --write **/*.{ts,js,css,html}",
